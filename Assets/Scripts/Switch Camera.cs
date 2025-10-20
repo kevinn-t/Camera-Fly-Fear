@@ -1,36 +1,49 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class SwitchCamera : MonoBehaviour
 {
     Camera[] cams;
     int camIndex;
-    InputAction interactButton;
 
     void Start()
     {
         camIndex = 0;
         cams = Camera.allCameras;
         foreach (Camera cam in cams)
+        {
             cam.gameObject.SetActive(false);
+            Debug.Log(cam.gameObject.name);
+        }
 
         cams[camIndex].gameObject.SetActive(true);
-
-        interactButton = InputSystem.actions.FindAction("Interact");
-        Debug.Log("balls");
     }
 
     void Update()
     {
-        if (interactButton.IsPressed())
+        if (Input.GetKeyDown("a"))
         {
-            Debug.Log("pressed interact");
+            camIndex--;
+
+            if (camIndex >= 0)
+            {
+                cams[camIndex].gameObject.SetActive(true);
+                cams[camIndex + 1].gameObject.SetActive(false);
+            }
+            else
+            {
+                cams[camIndex + 1].gameObject.SetActive(false);
+                camIndex = cams.Length - 1;
+                cams[camIndex].gameObject.SetActive(true);
+            }
+        }
+        if (Input.GetKeyDown("d"))
+        {
             camIndex++;
 
-            if (camIndex < cams.Length)
+            if (camIndex <= cams.Length - 1)
             {
-                cams[camIndex-1].gameObject.SetActive(false);
                 cams[camIndex].gameObject.SetActive(true);
+                cams[camIndex - 1].gameObject.SetActive(false);
             }
             else
             {
