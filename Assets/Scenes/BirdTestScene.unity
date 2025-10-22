@@ -321,57 +321,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &569202893 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 456034636780562705, guid: 27c84cb39cbe74945bba208cd0272789, type: 3}
-  m_PrefabInstance: {fileID: 1787749510}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &569202894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 569202893}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f39d9c16b8243d4a83fba4d3c25250d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BirdFlight
-  speed: 5
-  turnSpeed: 2
-  pathChangeInterval: 3
-  flightRange: 25
-  minHeight: 2
-  maxHeight: 10
---- !u!114 &569202895
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 569202893}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6fdd8cd07f2d0842a7666ecd720b806, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SwitchCamera
---- !u!114 &569202896
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 569202893}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05862bdfc19032b45bf0e2842995c473, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BirdPhotoCamera
-  photoKey: 32
-  photoPreview: {fileID: 0}
-  flashDuration: 0.15
-  photoFlashCanvas: {fileID: 0}
 --- !u!1 &580491188
 GameObject:
   m_ObjectHideFlags: 0
@@ -771,57 +720,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1075777655 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 456034636780562705, guid: 27c84cb39cbe74945bba208cd0272789, type: 3}
-  m_PrefabInstance: {fileID: 1999120790}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1075777656
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1075777655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f39d9c16b8243d4a83fba4d3c25250d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BirdFlight
-  speed: 5
-  turnSpeed: 2
-  pathChangeInterval: 3
-  flightRange: 25
-  minHeight: 2
-  maxHeight: 10
---- !u!114 &1075777657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1075777655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6fdd8cd07f2d0842a7666ecd720b806, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SwitchCamera
---- !u!114 &1075777658
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1075777655}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05862bdfc19032b45bf0e2842995c473, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BirdPhotoCamera
-  photoKey: 32
-  photoPreview: {fileID: 0}
-  flashDuration: 0.15
-  photoFlashCanvas: {fileID: 0}
 --- !u!1001 &1182378917
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -877,16 +775,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 456034636780562705, guid: 27c84cb39cbe74945bba208cd0272789, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1803077601}
-    - targetCorrespondingSourceObject: {fileID: 456034636780562705, guid: 27c84cb39cbe74945bba208cd0272789, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1803077603}
-    - targetCorrespondingSourceObject: {fileID: 456034636780562705, guid: 27c84cb39cbe74945bba208cd0272789, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1803077604}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27c84cb39cbe74945bba208cd0272789, type: 3}
 --- !u!1 &1187766760
 GameObject:
@@ -1141,6 +1030,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1226259457}
   m_CullTransparentMesh: 1
+--- !u!1 &1435006262
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1435006264}
+  - component: {fileID: 1435006263}
+  m_Layer: 0
+  m_Name: Game Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1435006263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435006262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6fdd8cd07f2d0842a7666ecd720b806, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SwitchCamera
+--- !u!4 &1435006264
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435006262}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.44416, y: 0, z: -2.39764}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1787749510
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1196,68 +1129,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 456034636780562705, guid: 27c84cb39cbe74945bba208cd0272789, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 569202895}
-    - targetCorrespondingSourceObject: {fileID: 456034636780562705, guid: 27c84cb39cbe74945bba208cd0272789, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 569202894}
-    - targetCorrespondingSourceObject: {fileID: 456034636780562705, guid: 27c84cb39cbe74945bba208cd0272789, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 569202896}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27c84cb39cbe74945bba208cd0272789, type: 3}
---- !u!1 &1803077599 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 456034636780562705, guid: 27c84cb39cbe74945bba208cd0272789, type: 3}
-  m_PrefabInstance: {fileID: 1182378917}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1803077601
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1803077599}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6fdd8cd07f2d0842a7666ecd720b806, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SwitchCamera
---- !u!114 &1803077603
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1803077599}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f39d9c16b8243d4a83fba4d3c25250d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BirdFlight
-  speed: 5
-  turnSpeed: 2
-  pathChangeInterval: 3
-  flightRange: 25
-  minHeight: 2
-  maxHeight: 10
---- !u!114 &1803077604
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1803077599}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05862bdfc19032b45bf0e2842995c473, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BirdPhotoCamera
-  photoKey: 32
-  photoPreview: {fileID: 0}
-  flashDuration: 0.15
-  photoFlashCanvas: {fileID: 0}
 --- !u!1001 &1999120790
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1313,16 +1186,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 456034636780562705, guid: 27c84cb39cbe74945bba208cd0272789, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1075777657}
-    - targetCorrespondingSourceObject: {fileID: 456034636780562705, guid: 27c84cb39cbe74945bba208cd0272789, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1075777656}
-    - targetCorrespondingSourceObject: {fileID: 456034636780562705, guid: 27c84cb39cbe74945bba208cd0272789, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1075777658}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27c84cb39cbe74945bba208cd0272789, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -1338,3 +1202,4 @@ SceneRoots:
   - {fileID: 1191645902}
   - {fileID: 1187766764}
   - {fileID: 711635470}
+  - {fileID: 1435006264}
