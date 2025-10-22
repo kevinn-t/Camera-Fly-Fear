@@ -447,6 +447,7 @@ MonoBehaviour:
   photoPreview: {fileID: 0}
   flashDuration: 0.15
   photoFlashCanvas: {fileID: 0}
+  fearMeter: {fileID: 0}
 --- !u!1 &580491188
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,6 +712,7 @@ MonoBehaviour:
   photoPreview: {fileID: 1226259459}
   flashDuration: 0.15
   photoFlashCanvas: {fileID: 580491191}
+  fearMeter: {fileID: 1778970982}
 --- !u!4 &711635470
 Transform:
   m_ObjectHideFlags: 0
@@ -1155,6 +1157,7 @@ MonoBehaviour:
   photoPreview: {fileID: 0}
   flashDuration: 0.15
   photoFlashCanvas: {fileID: 0}
+  fearMeter: {fileID: 0}
 --- !u!1 &1079651724
 GameObject:
   m_ObjectHideFlags: 0
@@ -1849,6 +1852,7 @@ MonoBehaviour:
   photoPreview: {fileID: 0}
   flashDuration: 0.15
   photoFlashCanvas: {fileID: 0}
+  fearMeter: {fileID: 0}
 --- !u!1 &1917148847
 GameObject:
   m_ObjectHideFlags: 0

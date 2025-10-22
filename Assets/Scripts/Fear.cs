@@ -30,7 +30,7 @@ public class FearMeter : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
         {
             Debug.Log("Increasing fear level");
-            fearLevel += 0.1f;
+            increaseFear(0.1f);
         }
 
         if (fearLevel >= 1.0f && !isBreathingActivated)
@@ -49,6 +49,12 @@ public class FearMeter : MonoBehaviour
         }
     }
 
+    public void increaseFear(float amount)
+    {
+        fearLevel += amount;
+        Debug.Log("Fear level increased to: " + fearLevel);
+    }
+
     void UpdatePanelTransparency()
     {
         panelCanvasGroup.alpha = fearLevel * maxTransparency;
@@ -65,14 +71,14 @@ public class FearMeter : MonoBehaviour
         }
     }
     
-void UpdateHeartbeatVolume()
-{
-    float targetVolume = Mathf.Clamp01((fearLevel - 1f) / 1f); // Same as (fearLevel - 1f)
-    heartbeatAudio.volume = targetVolume;
-
-    if (!heartbeatAudio.isPlaying && fearLevel > 1f)
+    void UpdateHeartbeatVolume()
     {
-        heartbeatAudio.Play();
+        float targetVolume = Mathf.Clamp01((fearLevel - 1f) / 1f); // Same as (fearLevel - 1f)
+        heartbeatAudio.volume = targetVolume;
+
+        if (!heartbeatAudio.isPlaying && fearLevel > 1f)
+        {
+            heartbeatAudio.Play();
+        }
     }
-}
 }

@@ -13,6 +13,8 @@ public class BirdPhotoCamera : MonoBehaviour
     private bool isFlashing = false;
     private Texture2D lastPhoto;               // Stores the most recent screenshot
 
+    public FearMeter fearMeter;                 // Reference to the FearMeter script
+
     void Update()
     {
         // Check if the player presses the photo key this frame (new Input System)
@@ -30,6 +32,8 @@ public class BirdPhotoCamera : MonoBehaviour
         // Trigger a short flash
         if (photoFlashCanvas && !isFlashing)
             StartCoroutine(PhotoFlash());
+
+        fearMeter.increaseFear(0.1f);
     }
 
     System.Collections.IEnumerator CapturePhoto()
