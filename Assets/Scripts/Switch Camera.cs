@@ -12,7 +12,6 @@ public class SwitchCamera : MonoBehaviour
         foreach (Camera cam in cams)
         {
             cam.gameObject.SetActive(false);
-            Debug.Log(cam.gameObject.name);
         }
 
         cams[camIndex].gameObject.SetActive(true);
