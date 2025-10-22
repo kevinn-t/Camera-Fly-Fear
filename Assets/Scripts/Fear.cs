@@ -30,7 +30,7 @@ public class FearMeter : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
         {
             Debug.Log("Increasing fear level");
-            fearLevel += 0.1f;
+            increaseFear(0.1f);
         }
 
         if (fearLevel >= 1.0f && !isBreathingActivated)
@@ -47,6 +47,11 @@ public class FearMeter : MonoBehaviour
             jumpscareAudio.Play(0);
             isJumpscareActivated = true;
         }
+    }
+
+    public void increaseFear(float amount)
+    {
+        fearLevel += amount;
     }
 
     void UpdatePanelTransparency()
