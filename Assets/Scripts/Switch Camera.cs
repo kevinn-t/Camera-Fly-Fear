@@ -2,55 +2,71 @@ using UnityEngine;
 
 public class SwitchCamera : MonoBehaviour
 {
-    Camera[] cams;
+    public Camera[] cams;
+
     int camIndex;
+    public BirdPhotoCamera cameraManager;
 
     void Start()
     {
+        if (cams == null || cams.Length == 0)
+        {
+            Debug.LogError("No cameras have been assigned to the SwitchCamera script.");
+            return;
+        }
+
         camIndex = 0;
-        cams = Camera.allCameras;
+
         foreach (Camera cam in cams)
         {
             cam.gameObject.SetActive(false);
         }
 
         cams[camIndex].gameObject.SetActive(true);
+
+        if (cameraManager != null)
+        {
+            cameraManager.currentActiveCamera = cams[camIndex];
+        }
     }
 
     void Update()
     {
         if (Input.GetKeyDown("a"))
         {
+            cams[camIndex].gameObject.SetActive(false);
+
             camIndex--;
 
-            if (camIndex >= 0)
+            if (camIndex < 0)
             {
-                cams[camIndex].gameObject.SetActive(true);
-                cams[camIndex + 1].gameObject.SetActive(false);
-            }
-            else
-            {
-                cams[camIndex + 1].gameObject.SetActive(false);
                 camIndex = cams.Length - 1;
-                cams[camIndex].gameObject.SetActive(true);
+            }
+
+            cams[camIndex].gameObject.SetActive(true);
+
+            if (cameraManager != null)
+            {
+                Debug.Log("Switching camera to " + cams[camIndex].name);
+                cameraManager.currentActiveCamera = cams[camIndex];
             }
         }
         if (Input.GetKeyDown("d"))
         {
+            cams[camIndex].gameObject.SetActive(false);
             camIndex++;
-
-            if (camIndex <= cams.Length - 1)
+            if (camIndex > cams.Length - 1)
             {
-                cams[camIndex].gameObject.SetActive(true);
-                cams[camIndex - 1].gameObject.SetActive(false);
-            }
-            else
-            {
-                cams[camIndex - 1].gameObject.SetActive(false);
                 camIndex = 0;
-                cams[camIndex].gameObject.SetActive(true);
+            }
+            
+            cams[camIndex].gameObject.SetActive(true);
+
+            if (cameraManager != null)
+            {
+                Debug.Log("Switching camera to " + cams[camIndex].name);
+                cameraManager.currentActiveCamera = cams[camIndex];
             }
         }
-
     }
 }

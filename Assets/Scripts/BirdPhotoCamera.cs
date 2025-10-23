@@ -10,6 +10,12 @@ public class BirdPhotoCamera : MonoBehaviour
     public float flashDuration = 0.15f;        // How long the white flash stays on screen
     public Canvas photoFlashCanvas;            // White flash overlay when snapping
 
+    [Header("Verification Settings")]
+    public CheckTargetVisibility visibilityChecker;     // Script to check if target is visibile
+    public Transform targetObjectToCheck;
+    public Camera currentActiveCamera = Camera.main;
+
+
     private bool isFlashing = false;
     private Texture2D lastPhoto;               // Stores the most recent screenshot
 
@@ -25,15 +31,28 @@ public class BirdPhotoCamera : MonoBehaviour
     void TakePhoto()
     {
         Debug.Log("Photo taken");
-
+        if (visibilityChecker != null && targetObjectToCheck != null && currentActiveCamera != null)
+        {
+            bool isVisible = visibilityChecker.CheckVisibility(targetObjectToCheck, currentActiveCamera);
+            Debug.Log("checking visibility");
+            if (isVisible)
+            {
+                Debug.Log("visible");
+            }
+            else
+            {
+                Debug.Log("not visible");
+            }
+        }
         // Start capturing the current screen 
         StartCoroutine(CapturePhoto());
-
+        
         // Trigger a short flash
         if (photoFlashCanvas && !isFlashing)
             StartCoroutine(PhotoFlash());
 
         fearMeter.increaseFear(0.1f);
+
     }
 
     System.Collections.IEnumerator CapturePhoto()
@@ -55,6 +74,9 @@ public class BirdPhotoCamera : MonoBehaviour
         // Display the new photo in the bottom-left UI preview
         if (photoPreview)
             photoPreview.texture = lastPhoto;
+
+        
+        
     }
 
     System.Collections.IEnumerator PhotoFlash()
