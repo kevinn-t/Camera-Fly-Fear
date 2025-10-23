@@ -45,6 +45,10 @@ public class BirdPhotoCamera : MonoBehaviour
     void TakePhoto()
     {
         Debug.Log("Photo taken");
+
+        // Start capturing the current screen 
+        StartCoroutine(CapturePhoto());
+
         // check if POI are in frame
         if (visibilityChecker != null && targetObjectToCheck != null && currentActiveCamera != null)
         {
@@ -61,13 +65,7 @@ public class BirdPhotoCamera : MonoBehaviour
                 Debug.Log("POI not in frame");
             }
         }
-        // Start capturing the current screen 
-        StartCoroutine(CapturePhoto());
         
-        // Trigger a short flash
-        if (photoFlashCanvas && !isFlashing)
-            StartCoroutine(PhotoFlash());
-
         fearMeter.increaseFear(0.1f);
 
     }
@@ -88,6 +86,16 @@ public class BirdPhotoCamera : MonoBehaviour
         if (lastPhoto != null) Destroy(lastPhoto);
         lastPhoto = screenTex;
 
+        if (photoFlashCanvas && !isFlashing)
+        {
+            // Enable the flash overlay for a short moment
+            isFlashing = true;
+            photoFlashCanvas.SetActive(true);
+            yield return new WaitForSeconds(flashDuration);
+            photoFlashCanvas.SetActive(false);
+            isFlashing = false;
+        }
+        
         // Display the new photo in the bottom-left UI preview
         if (photoPreview)
             photoPreview.texture = lastPhoto;
@@ -96,13 +104,4 @@ public class BirdPhotoCamera : MonoBehaviour
         
     }
 
-    System.Collections.IEnumerator PhotoFlash()
-    {
-        // Enable the flash overlay for a short moment
-        isFlashing = true;
-        photoFlashCanvas.SetActive(true);
-        yield return new WaitForSeconds(flashDuration);
-        photoFlashCanvas.SetActive(false);
-        isFlashing = false;
-    }
 }
