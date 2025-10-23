@@ -66,5 +66,5 @@
     "explorer.fileNesting.patterns": {
         "*.sln": "*.csproj"
     },
-    "dotnet.defaultSolution": "Camera Fly Fear.sln"
+    "dotnet.defaultSolution": "Camera-Fly-Fear.sln"
 }

@@ -15,12 +15,13 @@ public class TESTmousectrlcam : MonoBehaviour
     [SerializeField] private float baseFOV = 60f;
     [SerializeField] private float chaseFOV = 90f;
 
+    private bool isChasing = false;
+
 
     Transform target;
 
     void Update()
     {
-        Debug.Log("FOV: " + Camera.main.fieldOfView);
 
         // switch when LMB is pressed
         if (Input.GetMouseButtonDown(0))
@@ -45,6 +46,7 @@ public class TESTmousectrlcam : MonoBehaviour
             Vector3 dir = (target.position - transform.position).normalized;
             if (dir != Vector3.zero && Vector3.Distance(transform.position, target.position) > proximity)
             {
+                isChasing = true;
                 Camera.main.fieldOfView = chaseFOV;
 
                 Quaternion rot = Quaternion.LookRotation(dir);
@@ -55,9 +57,13 @@ public class TESTmousectrlcam : MonoBehaviour
             // but if too close, just snap to a set position
             else
             {
-                Camera.main.fieldOfView = baseFOV;
+                if (isChasing)
+                {
+                    Camera.main.fieldOfView = baseFOV;
+                }
+                isChasing = false;
                 transform.position = target.position;
-                transform.rotation = target.rotation;
+                transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 0);
             }
         }
     }
