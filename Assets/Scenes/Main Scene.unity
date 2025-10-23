@@ -1434,7 +1434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05862bdfc19032b45bf0e2842995c473, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BirdPhotoCamera
-  photoKey: 32
+  photoKey: 1
   photoPreview: {fileID: 1226259459}
   flashDuration: 0.15
   photoFlashCanvas: {fileID: 580491188}
@@ -2259,7 +2259,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1187766761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2361,7 +2361,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1191645900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2816,7 +2816,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1917148848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3052,15 +3052,15 @@ SceneRoots:
   - {fileID: 483272533}
   - {fileID: 328601810}
   - {fileID: 363365957}
-  - {fileID: 580491192}
-  - {fileID: 1191645902}
-  - {fileID: 1187766764}
-  - {fileID: 1917148851}
-  - {fileID: 569224471}
-  - {fileID: 1096209387}
   - {fileID: 360488365}
   - {fileID: 1518126824}
   - {fileID: 1150885239}
   - {fileID: 973785106}
   - {fileID: 380759022}
   - {fileID: 659156973}
+  - {fileID: 580491192}
+  - {fileID: 1187766764}
+  - {fileID: 1917148851}
+  - {fileID: 569224471}
+  - {fileID: 1096209387}
+  - {fileID: 1191645902}
