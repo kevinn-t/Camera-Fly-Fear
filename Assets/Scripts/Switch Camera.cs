@@ -63,7 +63,14 @@ public class TESTmousectrlcam : MonoBehaviour
                 }
                 isChasing = false;
                 transform.position = target.position;
-                transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 0);
+                if (Input.GetKey(KeyCode.Space))
+                {
+                    transform.rotation = target.rotation;
+                } else
+                {
+                    transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 0);
+                }
+                
             }
         }
     }
