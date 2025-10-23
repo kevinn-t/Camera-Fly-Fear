@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class BirdPhotoCamera : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class BirdPhotoCamera : MonoBehaviour
     public CheckTargetVisibility visibilityChecker;     // Script to check if target is visibile
     public Transform targetObjectToCheck;
     public Camera currentActiveCamera = Camera.main;
+    public TextMeshProUGUI successCounterText;
 
     private int successfulPhotos = 0;
     private bool isFlashing = false;
@@ -45,6 +47,7 @@ public class BirdPhotoCamera : MonoBehaviour
             {
                 Debug.Log("visible");
                 successfulPhotos++;
+                successCounterText.text = successfulPhotos + "/3";
             }
             else
             {
