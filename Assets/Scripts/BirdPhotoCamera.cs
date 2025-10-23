@@ -66,7 +66,7 @@ public class BirdPhotoCamera : MonoBehaviour
             }
         }
         
-        fearMeter.increaseFear(0.1f);
+        fearMeter.increaseFear();
 
     }
 
