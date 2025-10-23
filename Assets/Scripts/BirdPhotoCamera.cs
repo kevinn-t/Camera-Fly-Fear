@@ -1,6 +1,7 @@
 using UnityEngine; 
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class BirdPhotoCamera : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class BirdPhotoCamera : MonoBehaviour
     public Transform targetObjectToCheck;
     public Camera currentActiveCamera = Camera.main;
 
-
+    private int successfulPhotos = 0;
     private bool isFlashing = false;
     private Texture2D lastPhoto;               // Stores the most recent screenshot
 
@@ -26,6 +27,11 @@ public class BirdPhotoCamera : MonoBehaviour
         // Check if the player presses the photo key this frame (new Input System)
         if (Keyboard.current[photoKey].wasPressedThisFrame)
             TakePhoto();
+
+        if (successfulPhotos >= 3)
+        {
+            SceneManager.LoadScene("EvidenceTestScene");
+        }
     }
 
     void TakePhoto()
@@ -38,6 +44,7 @@ public class BirdPhotoCamera : MonoBehaviour
             if (isVisible)
             {
                 Debug.Log("visible");
+                successfulPhotos++;
             }
             else
             {

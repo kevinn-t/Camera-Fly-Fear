@@ -488,6 +488,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6fdd8cd07f2d0842a7666ecd720b806, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SwitchCamera
+  cams:
+  - {fileID: 961739752}
+  - {fileID: 1384824380}
+  - {fileID: 1839054907}
+  - {fileID: 1364288709}
   cameraManager: {fileID: 711635469}
 --- !u!1 &580491188
 GameObject:
@@ -1185,6 +1190,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6fdd8cd07f2d0842a7666ecd720b806, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SwitchCamera
+  cams:
+  - {fileID: 961739752}
+  - {fileID: 1384824380}
+  - {fileID: 1839054907}
+  - {fileID: 1364288709}
   cameraManager: {fileID: 711635469}
 --- !u!1 &1079651724
 GameObject:
@@ -1413,7 +1423,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4366882965390032845, guid: 27c84cb39cbe74945bba208cd0272789, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 351165656351305034, guid: 27c84cb39cbe74945bba208cd0272789, type: 3}
@@ -1680,6 +1690,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1226259457}
   m_CullTransparentMesh: 1
+--- !u!20 &1364288709 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 2750248101558601022, guid: 27c84cb39cbe74945bba208cd0272789, type: 3}
+  m_PrefabInstance: {fileID: 1182378917}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1378419496
 GameObject:
   m_ObjectHideFlags: 0
@@ -1756,6 +1771,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1378419496}
   m_CullTransparentMesh: 1
+--- !u!20 &1384824380 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 2750248101558601022, guid: 27c84cb39cbe74945bba208cd0272789, type: 3}
+  m_PrefabInstance: {fileID: 1787749510}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1388437437 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 780761152700154019, guid: 6924745a509f7b746bc74f3d4548b1aa, type: 3}
@@ -1884,7 +1904,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4366882965390032845, guid: 27c84cb39cbe74945bba208cd0272789, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 351165656351305034, guid: 27c84cb39cbe74945bba208cd0272789, type: 3}
@@ -1915,6 +1935,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6fdd8cd07f2d0842a7666ecd720b806, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SwitchCamera
+  cams:
+  - {fileID: 961739752}
+  - {fileID: 1384824380}
+  - {fileID: 1839054907}
+  - {fileID: 1364288709}
   cameraManager: {fileID: 711635469}
 --- !u!114 &1803077603
 MonoBehaviour:
@@ -1934,6 +1959,11 @@ MonoBehaviour:
   flightRange: 25
   minHeight: 2
   maxHeight: 10
+--- !u!20 &1839054907 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 2750248101558601022, guid: 27c84cb39cbe74945bba208cd0272789, type: 3}
+  m_PrefabInstance: {fileID: 1999120790}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1917148847
 GameObject:
   m_ObjectHideFlags: 0
@@ -2232,7 +2262,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4366882965390032845, guid: 27c84cb39cbe74945bba208cd0272789, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 351165656351305034, guid: 27c84cb39cbe74945bba208cd0272789, type: 3}
