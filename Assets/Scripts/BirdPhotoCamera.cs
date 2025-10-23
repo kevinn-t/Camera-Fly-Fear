@@ -10,12 +10,12 @@ public class BirdPhotoCamera : MonoBehaviour
     public Key photoKey = Key.Space;           // Key to take a photo (uses new Input System)
     public RawImage photoPreview;              // UI image that shows the last photo
     public float flashDuration = 0.15f;        // How long the white flash stays on screen
-    public Canvas photoFlashCanvas;            // White flash overlay when snapping
+    public GameObject photoFlashCanvas;            // White flash overlay when snapping
 
     [Header("Verification Settings")]
     public CheckTargetVisibility visibilityChecker;     // Script to check if target is visibile
     public Transform targetObjectToCheck;
-    public Camera currentActiveCamera = Camera.main;
+    public Camera currentActiveCamera;
     public TextMeshProUGUI successCounterText;
 
     private int successfulPhotos = 0;
@@ -23,6 +23,12 @@ public class BirdPhotoCamera : MonoBehaviour
     private Texture2D lastPhoto;               // Stores the most recent screenshot
 
     public FearMeter fearMeter;                 // Reference to the FearMeter script
+
+    void Awake()
+    {
+        currentActiveCamera = Camera.main;
+        photoFlashCanvas.SetActive(false);
+    }
 
     void Update()
     {
@@ -39,19 +45,20 @@ public class BirdPhotoCamera : MonoBehaviour
     void TakePhoto()
     {
         Debug.Log("Photo taken");
+        // check if POI are in frame
         if (visibilityChecker != null && targetObjectToCheck != null && currentActiveCamera != null)
         {
             bool isVisible = visibilityChecker.CheckVisibility(targetObjectToCheck, currentActiveCamera);
             Debug.Log("checking visibility");
             if (isVisible)
             {
-                Debug.Log("visible");
+                Debug.Log("POI not in frame");
                 successfulPhotos++;
                 successCounterText.text = successfulPhotos + "/3";
             }
             else
             {
-                Debug.Log("not visible");
+                Debug.Log("POI not in frame");
             }
         }
         // Start capturing the current screen 
@@ -93,9 +100,9 @@ public class BirdPhotoCamera : MonoBehaviour
     {
         // Enable the flash overlay for a short moment
         isFlashing = true;
-        photoFlashCanvas.enabled = true;
+        photoFlashCanvas.SetActive(true);
         yield return new WaitForSeconds(flashDuration);
-        photoFlashCanvas.enabled = false;
+        photoFlashCanvas.SetActive(false);
         isFlashing = false;
     }
 }

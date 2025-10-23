@@ -16,7 +16,7 @@ public class CheckTargetVisibility : MonoBehaviour
         }
         else
         {
-            Debug.Log("Target is not in view.");
+            // Debug.Log("Target is not in view.");
             return false;
         }
     }
