@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
 
             if (promptText != null)
             {
-                promptText.text = "Drag the " + currentPrompt + " image";
+                promptText.text = "Drag the image depicting " + currentPrompt + ".";
             }
         }
         else
@@ -76,15 +76,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Drop Heard!");
         if (droppedImageID == currentPrompt)
         {
-            Debug.Log("correct!");
-            availablePrompts.Remove(currentPrompt);
-            DraggableImage correctImage = FindDraggableImageByID(droppedImageID);
-            if (correctImage != null)
-            {
-                correctImage.gameObject.SetActive(false);
-            }
-
-            GenerateNewPrompt();
+            StartCoroutine(ConfirmEvidence(droppedImageID));
         }
         else
         {
@@ -99,10 +91,36 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
 
         DraggableImage imageToReset = FindDraggableImageByID(droppedImageID);
+        imageToReset.gameObject.SetActive(false);
+        yield return new WaitForSeconds(0.2f);
+        imageToReset.gameObject.SetActive(true);
+        yield return new WaitForSeconds(0.2f);
+        imageToReset.gameObject.SetActive(false);
+        yield return new WaitForSeconds(0.2f);
+        imageToReset.gameObject.SetActive(true);
+        yield return new WaitForSeconds(0.2f);
+        imageToReset.gameObject.SetActive(false);
+        yield return new WaitForSeconds(0.2f);
+        imageToReset.gameObject.SetActive(true);
         if (imageToReset != null)
         {
             imageToReset.ResetPosition();
         }
+    }
+
+    private IEnumerator ConfirmEvidence(string droppedImageID)
+    {
+        yield return new WaitForSeconds(1.5f);
+
+        Debug.Log("correct!");
+            availablePrompts.Remove(currentPrompt);
+            DraggableImage correctImage = FindDraggableImageByID(droppedImageID);
+            if (correctImage != null)
+            {
+                correctImage.gameObject.SetActive(false);
+            }
+
+            GenerateNewPrompt();
     }
 
     private DraggableImage FindDraggableImageByID(string imageID)
